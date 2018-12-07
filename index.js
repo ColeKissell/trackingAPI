@@ -42,11 +42,21 @@ server.route({
 // get item by id
 server.route({
     method: 'GET',
-    path: '/item/{id}',
+    path: '/item/detial/{id}',
     handler: (req, rep) =>{
         return methods.findTheId(req.params.id, rep)
     }
 })
+
+// get item by search name
+server.route({
+    method: 'GET',
+    path: '/item/search/{search}',
+    handler: (req, rep) =>{
+        return methods.findTheName(req.params.search, rep)
+    }
+})
+
 // update item put by id
 server.route({
     method: 'PUT',

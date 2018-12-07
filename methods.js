@@ -11,8 +11,18 @@ const findTheId = ( id, reply) => {
     const foundThing = Items.findById(id, (err, data)=>{
         if(err){return reply(err).code(404)}
     })
+   
     return foundThing;
 }
+const findTheName = async( search, reply) => {
+    const allItems = await AllThings().then();
+    let searchTerm = search.toLowerCase().replace(/[+]/g,' ')
+    const foundThings = allItems.filter(item=>
+    item.name.toLowerCase().includes(searchTerm)
+    )
+    return foundThings;
+}
+
 const newItem = (request) => {
     const {name, description} = request.payload;
     const thing = new Items ({
@@ -44,5 +54,6 @@ module.exports = {
     findTheId,
     newItem,
     updateItem,
-    deleteTheThing
+    deleteTheThing,
+    findTheName
 }
