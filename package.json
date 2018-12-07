@@ -4,6 +4,7 @@
   "description": "\"tracker api\"",
   "main": "index.js",
   "scripts": {
+    "start":"node index.js",
     "test": "npm start"
   },
   "author": "",
