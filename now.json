@@ -1,7 +1,9 @@
 {
     "version": 2,
     "builds": [
-        { "src": "index.js", "use": "@now/node" }
+        { "src": "index.js", "use": "@now/node" },
+        { "src": "methods.js", "use": "@now/node" },
+        { "src": "/model/itemModel.js", "use": "@now/node" }
       ]
     
 }
